@@ -1,0 +1,15 @@
+{
+  "model": {
+    "model_dir": "qwen-dora-db",
+    "base_model_name": "models/Qwen3.5-0.8B-Base"
+  },
+  "runtime": {
+    "dtype": "auto",
+    "max_length": 64,
+    "batch_size": 4
+  },
+  "thresholds": {
+    "violation_threshold": 0.5,
+    "quote_threshold": 0.5
+  }
+}

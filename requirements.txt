@@ -1,0 +1,6 @@
+torch>=2.2
+transformers>=5.5.4
+peft>=0.19
+safetensors>=0.4
+fastapi>=0.116
+uvicorn>=0.35
