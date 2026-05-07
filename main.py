@@ -217,10 +217,11 @@ class ModerationPredictor:
                 max_length=self.max_length,
                 return_tensors="pt",
             ).to(self.device)
-            outputs = self.model(
-                input_ids=tokenized["input_ids"],
-                attention_mask=tokenized["attention_mask"],
-            )
+            with torch.backends.cudnn.flags(enabled=False):
+                outputs = self.model(
+                    input_ids=tokenized["input_ids"],
+                    attention_mask=tokenized["attention_mask"],
+                )
             violation_probs = torch.sigmoid(outputs.violation_logits).cpu()
             severity_probs = torch.softmax(outputs.severity_logits, dim=-1).cpu()
             quote_probs = torch.sigmoid(outputs.quote_logits).cpu()

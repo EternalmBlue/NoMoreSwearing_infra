@@ -1,6 +1,6 @@
 {
   "model": {
-    "model_dir": "qwen-dora-db",
+    "model_dir": "qwen-dora-lr-5e-5-dropout-0.12-r-64-a-128",
     "base_model_name": "models/Qwen3.5-0.8B-Base"
   },
   "runtime": {
